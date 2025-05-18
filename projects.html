@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="logo">
-            <span class="logo-square">■</span>
+            <span class="logo-square blue-square">■</span>
             <div class="logo-text">
                 <h1>ANDI ASHRAF<br>HAK BISYU</h1>
             </div>
@@ -40,7 +40,7 @@
             <div class="project-card japanese-festival">
                 <div class="project-content">
                     <div class="project-title">Japanese Festival</div>
-                    <div class="project-role">EVENT ORGANIZER</div>
+                    <div class="project-role">EVENT DIVISION</div>
                     <div class="project-description">
                         <p>Japanese Club SMAN 21 Makassar mengadakan Japanese Club Festival yang diberi nama J-FEST dengan mengangkat tema "Jembatan Seni & Budaya Bali - Kyoto" di Gedung Kesenian Makassar pada tanggal 20-22 Oktober. Kegiatan tersebut diikuti oleh Kepala Kantor Konsulat Jepang di Makassar. Acara Kolaborasi berbagai festival kegiatan di festival ini melibatkan pertunjukan J-POP, tari tradisional Jepang, dan berbagai kegiatan lainnya seperti cosplay, fashion, serta games menarik dari Jepang & Indonesia, seni pertunjukan, stand pameran, dan flashmob juga tersedia.</p>
                         <p>Japanese Club 21 (JC-21) merupakan salah satu ekstrakurikuler di SMA Negeri 21 Makassar. JC-21 berdiri sejak tahun 2017. Awalnya, JC-21 hanyalah sebuah perkumpulan orang yang memiliki hobi yang berkaitan di SMA Negeri 21 Makassar hingga akhirnya menjadi sebuah ekstrakurikuler. JC-21 memiliki proposal dan program kerja yang terstruktur.</p>
@@ -48,130 +48,42 @@
                     </div>
                 </div>
                 <div class="project-image" id="japaneseImageContainer">
-                    <img src="japanese-festival.jpg" alt="Japanese Festival" id="japaneseImage">
-                    <div class="upload-overlay">
-                        <label for="japaneseImageUpload" class="upload-btn">
-                            <i class="fas fa-camera"></i>
-                        </label>
-                        <input type="file" id="japaneseImageUpload" class="hidden-input" accept="image/*">
-                    </div>
+                    <img src="japanese-festival.jpg" alt="Japanese Festival SMAN 21 Makassar" id="japaneseImage">
                 </div>
             </div>
             
-            <div class="project-card riasin">
+            <div class="project-card riasin-app">
                 <div class="project-content">
                     <div class="project-title">Riasin</div>
                     <div class="project-role">PROJECT MANAGER</div>
                     <div class="project-description">
-                        <p>Riasin mobile App adalah sebuah platform untuk penata rias dengan konsep yang unik. Platform ini berbasis pada layanan online untuk menghubungkan penata rias dengan pelanggan. Kami berusaha untuk menjawab permasalahan para penata rias dan juga memberikan layanan terlengkap dan berkualitas untuk penata rias yang ada di Indonesia.</p>
+                        <p>Riasin mobile App adalah sebuah platform untuk wanita dan dengan konsep yang unik. Platform ini berfokus pada layanan online untuk menghubungkan wanita rias dengan pelanggan. Kami berfokus untuk mengatasi permasalahan para wanita rias dan ingin memberikan layanan terpercaya dan berkualitas untuk wanita rias yang ada di Indonesia.</p>
                     </div>
                 </div>
                 <div class="project-image" id="riasinImageContainer">
-                    <img src="riasin-app.jpg" alt="Riasin App" id="riasinImage">
-                    <div class="upload-overlay">
-                        <label for="riasinImageUpload" class="upload-btn">
-                            <i class="fas fa-camera"></i>
-                        </label>
-                        <input type="file" id="riasinImageUpload" class="hidden-input" accept="image/*">
-                    </div>
+                    <img src="luna-app.jpg" alt="Riasin App" id="riasinImage">
                 </div>
             </div>
         </div>
     </main>
     
-    <script>
-        // Fitur upload foto untuk Japanese Festival
-        document.addEventListener('DOMContentLoaded', function() {
-            // Japanese Festival image upload
-            const japaneseImageContainer = document.getElementById('japaneseImageContainer');
-            const japaneseImage = document.getElementById('japaneseImage');
-            const japaneseImageUpload = document.getElementById('japaneseImageUpload');
-            
-            // Tampilkan overlay saat hover
-            japaneseImageContainer.addEventListener('mouseenter', function() {
-                this.classList.add('hover');
-            });
-            
-            japaneseImageContainer.addEventListener('mouseleave', function() {
-                this.classList.remove('hover');
-            });
-            
-            // Proses upload gambar
-            japaneseImageUpload.addEventListener('change', function(e) {
-                if (e.target.files && e.target.files[0]) {
-                    const reader = new FileReader();
-                    
-                    reader.onload = function(event) {
-                        japaneseImage.src = event.target.result;
-                        
-                        // Simpan gambar di localStorage
-                        localStorage.setItem('japaneseImage', event.target.result);
-                    }
-                    
-                    reader.readAsDataURL(e.target.files[0]);
-                }
-            });
-            
-            // Cek apakah ada gambar tersimpan
-            const savedJapaneseImage = localStorage.getItem('japaneseImage');
-            if (savedJapaneseImage) {
-                japaneseImage.src = savedJapaneseImage;
-            }
-            
-            // Riasin image upload
-            const riasinImageContainer = document.getElementById('riasinImageContainer');
-            const riasinImage = document.getElementById('riasinImage');
-            const riasinImageUpload = document.getElementById('riasinImageUpload');
-            
-            // Tampilkan overlay saat hover
-            riasinImageContainer.addEventListener('mouseenter', function() {
-                this.classList.add('hover');
-            });
-            
-            riasinImageContainer.addEventListener('mouseleave', function() {
-                this.classList.remove('hover');
-            });
-            
-            // Proses upload gambar
-            riasinImageUpload.addEventListener('change', function(e) {
-                if (e.target.files && e.target.files[0]) {
-                    const reader = new FileReader();
-                    
-                    reader.onload = function(event) {
-                        riasinImage.src = event.target.result;
-                        
-                        // Simpan gambar di localStorage
-                        localStorage.setItem('riasinImage', event.target.result);
-                    }
-                    
-                    reader.readAsDataURL(e.target.files[0]);
-                }
-            });
-            
-            // Cek apakah ada gambar tersimpan
-            const savedRiasinImage = localStorage.getItem('riasinImage');
-            if (savedRiasinImage) {
-                riasinImage.src = savedRiasinImage;
-            }
-        });
-    </script>
+    <footer>
+        <div class="footer-left">
+            <p>© 2023 Andi Ashraf Hak Bisyu</p>
+            <p>Powered and secured by M.S</p>
+        </div>
+        <div class="footer-right">
+            <div class="footer-contact">
+                <p>Andi Ashraf Hak Bisyu</p>
+                <p>hbasraf290@gmail.com</p>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
 </body>
-<footer>
-    <div class="footer-left">
-        <p>© 2023 Andi Ashraf Hak Bisyu</p>
-        <p>Powered and secured by M.S</p>
-    </div>
-    <div class="footer-right">
-        <div class="footer-contact">
-            <p>Andi Ashraf Hak Bisyu</p>
-            <p>hbasraf290@gmail.com</p>
-        </div>
-        <div class="footer-social">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-    </div>
-</footer>
 </html>
