@@ -105,19 +105,18 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .profile-image {
-    width: 150px;
-    height: 150px;
+    width: 150px;  /* Ubah ukuran sesuai kebutuhan */
+    height: 150px; /* Ubah ukuran sesuai kebutuhan */
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 2rem;
     position: relative;
-    cursor: pointer;
 }
 
 .profile-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Memastikan gambar menutupi area dengan baik */
 }
 
 .profile-info h2 {
@@ -211,32 +210,15 @@ nav ul li a:hover, nav ul li a.active {
 
 /* Upload Foto Styles */
 .upload-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s;
-    border-radius: 50%;
+    display: none; /* Mengubah dari position: absolute menjadi display: none */
 }
 
 .profile-image.hover .upload-overlay {
-    opacity: 1;
+    opacity: 0; /* Mengubah dari opacity: 1 */
 }
 
 .upload-btn {
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.upload-btn:hover {
-    color: #007bff;
+    display: none; /* Menyembunyikan tombol upload */
 }
 
 .hidden-input {
@@ -387,72 +369,67 @@ nav ul li a:hover, nav ul li a.active {
 
 /* Projects Page Styles */
 .projects-main {
-    background-color: #4a3c2d;
-    padding: 3rem;
-    min-height: calc(100vh - 60px);
+    padding: 2rem;
+    background-color: #333;
+    color: white;
+    min-height: 100vh;
+}
+
+.projects-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.projects-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+}
+
+.blue-square {
+    color: #007bff;
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
 }
 
 .projects-intro {
     text-align: center;
-    color: #aaa;
     margin-bottom: 3rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 1.1rem;
 }
 
 .projects-container {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .project-card {
     display: flex;
+    border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.project-card.japanese-festival {
+    background-color: #ff3b00;
+}
+
+.project-card.riasin-app {
+    background-color: #d600ff;
 }
 
 .project-content {
     padding: 2rem;
-    width: 60%;
-}
-
-.japanese-festival {
-    background-color: #ff4500;
-    color: white;
-}
-
-.riasin {
-    background-color: #cc00cc;
-    color: white;
-}
-
-.project-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-.project-role {
-    font-size: 0.8rem;
-    margin-bottom: 1.5rem;
-    opacity: 0.8;
-}
-
-.project-description {
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-.project-description p {
-    margin-bottom: 1rem;
+    flex: 1;
 }
 
 .project-image {
-    width: 40%;
-    position: relative;
+    flex: 1;
+    max-width: 50%;
     overflow: hidden;
 }
 
@@ -460,40 +437,59 @@ nav ul li a:hover, nav ul li a.active {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
-/* Upload Foto untuk Projects */
-.project-image .upload-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s;
+.project-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: white;
 }
 
-.project-image.hover .upload-overlay {
-    opacity: 1;
+.project-role {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
 }
 
-/* Responsive Styles untuk Projects */
+.project-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive styles */
 @media (max-width: 768px) {
     .project-card {
         flex-direction: column;
     }
     
-    .project-content, .project-image {
-        width: 100%;
-    }
-    
     .project-image {
-        height: 300px;
+        max-width: 100%;
+        height: 250px;
     }
+}
+
+/* Header styles update */
+header {
+    background-color: #111;
+    color: white;
+}
+
+nav ul li a {
+    color: white;
+}
+
+nav ul li a.active {
+    color: #007bff;
+}
+
+/* Footer styles update */
+footer {
+    background-color: #111;
+    color: white;
 }
 
 .projects-container {
@@ -770,5 +766,67 @@ footer {
     .footer-contact {
         margin-right: 0;
         margin-bottom: 0.5rem;
+    }
+}
+
+/* Profile Details Styles */
+.profile-details {
+    margin-top: 1.5rem;
+    text-align: left;
+    padding: 0 1rem;
+}
+
+.profile-detail-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    color: #aaa;
+}
+
+.profile-detail-item i {
+    width: 20px;
+    margin-right: 10px;
+    color: #007bff;
+}
+
+/* About Section Styles */
+.about-section, .skills-section {
+    margin-bottom: 2rem;
+}
+
+.about-section h3, .skills-section h3 {
+    color: #007bff;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-section p {
+    color: #aaa;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    color: #aaa;
+}
+
+.blue-dot {
+    color: #007bff;
+    margin-right: 0.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .skills-list {
+        grid-template-columns: 1fr;
     }
 }
